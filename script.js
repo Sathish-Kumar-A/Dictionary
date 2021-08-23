@@ -12,7 +12,11 @@ async function search(){
         detailBox(getData)
     }
     catch{
-        window.alert("Sorry no word exists")
+        resultContainer.innerHTML=``
+        let error=document.createElement('h3')
+        error.setAttribute('class','errormsg');
+        error.innerText="Sorry no word exists.......... :(";
+        resultContainer.append(error)
     }
     
 }
@@ -24,8 +28,10 @@ function detailBox(letterArray){
     let wordSpeak=document.createElement('div');
     wordSpeak.setAttribute('class','wordSpeaker');
     wordSpeak.innerHTML=`
-    <button class="speakerbtn" onclick="speak(${letterArray[0].phonetics[0].audio})"><img src="speaker.jpg" class="speakerimg" alt=""></button>
-    <h4>${letterArray[0].word} (${letterArray[0].phonetic})</h4>`
+    <h4>${letterArray[0].word} (${letterArray[0].phonetic})</h4>
+    <audio controls class="audiobtn">
+     <source src="${letterArray[0].phonetics[0].audio}">
+    </audio>`
 
     resultContainer.append(wordSpeak);
     
@@ -33,6 +39,7 @@ function detailBox(letterArray){
     meaningtitle.setAttribute('class','meanTitle');
     meaningtitle.innerHTML=`<h2>Meanings</h2>`
     resultContainer.append(meaningtitle)
+
     meaningParts(letterArray[0].meanings)
 
     
@@ -50,12 +57,22 @@ function meaningParts(array){
         resultContainer.append(meaning)
     }
 }
-function speak(audio){
-    
-}
 
 document.onkeydown=function enter(event){
     if(event.keyCode==13){
         search()
     }
 }
+
+function colorchange(colorarr){
+    let y=0;
+    while(y<colorarr.length){
+        meaningtitle.style.color=y;
+        if(y==2){
+            y=0;
+        }
+        y++;
+    }
+}
+
+// 
