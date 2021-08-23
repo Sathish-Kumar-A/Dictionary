@@ -1,4 +1,6 @@
 let resultContainer=document.createElement('div');
+let meaningtitle=document.createElement('div');
+meaningtitle.setAttribute('class','meanTitle');
 
 let bodybox=document.querySelector(".outer");
 bodybox.append(resultContainer);
@@ -35,8 +37,7 @@ function detailBox(letterArray){
 
     resultContainer.append(wordSpeak);
     
-    let meaningtitle=document.createElement('div');
-    meaningtitle.setAttribute('class','meanTitle');
+    
     meaningtitle.innerHTML=`<h2>Meanings</h2>`
     resultContainer.append(meaningtitle)
 
@@ -64,15 +65,17 @@ document.onkeydown=function enter(event){
     }
 }
 
+let colorarr=['blue','red','green','yellow']
 function colorchange(colorarr){
     let y=0;
     while(y<colorarr.length){
         meaningtitle.style.color=y;
-        if(y==2){
-            y=0;
-        }
+        // if(y==2){
+        //     y=0;
+        // }
         y++;
     }
 }
+setInterval(colorchange(colorarr),2000);
 
 // 
