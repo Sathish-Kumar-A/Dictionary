@@ -1,0 +1,63 @@
+.navi{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #5D3F6A;
+    color: white;
+    height:60px;
+    font-family: 'Rampart One', cursive;
+}
+.title{
+    color: white;
+}
+.search{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+#searchbox{
+    width: 200px;
+    margin-right: 20px;
+}
+.resultBox{
+    margin-top: 30px;
+    box-shadow: 0 5px 7px ;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+.wordSpeaker{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+    margin-top: 20px;
+}
+.speakerbtn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.speakerimg{
+    border-radius: 50%;
+    width:50px;
+    height:30px;
+}
+
+.meanTitle{
+    text-align: center;
+}
+.meaningBox{
+    padding: 15px;
+    margin-left: 10px;
+}
+h3{
+    color: teal;
+}
+p{
+    color: rgb(46, 45, 45);
+}
